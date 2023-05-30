@@ -71,3 +71,4 @@ _Replace each "POE#" with the actual item you are including_
 - [ ] Attended all classes and took notes that were reviewed later down the road
 - [ ] Re-attempted Hackathon code after reviewing with peers and going to office hours
 - [ ] Went to office hours and worked through issues both during and after office hours
+- [ ] Completed the required self-eval check-in sheets and made sure to act on advice from those meetings (e.g. get hackathon code from someone who had some of it working)
