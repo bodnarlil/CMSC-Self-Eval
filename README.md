@@ -52,13 +52,13 @@ _Replace each "POE#" with the actual item you are including_
 
 - [ ] Participated in paper discusisions
 - [ ] Put effort into Perusall comments and questions
-- [ ] IDKIDKIDKIDK
+- [ ] Was able to connect Artificaial Life to my Machine Learning class through various topics like neural networks and modeling data
 
 ### L3: Computational Collaboration
 
 - [ ] Successfully used GitHub to push and pull code for a variety of classes, as documented in my GitHub account
 - [ ] Contributed documentation for Windows users for MABE 2 and created a slideshow to go with it
-- [ ] IDKIDKIDKIDK
+- [ ] Went to Office Hours to set up GitHub repository and folders for this self-eval
 
 ### L4: Failure
 
