@@ -35,7 +35,7 @@ You can use the same piece of evidence for up to 2 different learning goals.
 
 _When you make a copy, you can delete everything above here and use the below as a template._
 
-# YourNameHere CMSC 270 Final Portfolio
+# Lilia Bodnar CMSC 270 Final Portfolio
 
 ## Checklist
 
@@ -44,30 +44,30 @@ _Replace each "POE#" with the actual item you are including_
 2 pieces of evidence required for each. 3 pieces required for each if self-assigning an A or A-. 
 
 ### L1: Evolution as an Algorithm
-- [ ] POE1
-- [ ] POE2
-- [ ] POE3*
+- [ ] Hackathon: coding the tournament and roulette selection
+- [ ] Notes from first 5 weeks of class
+- [ ] C++ Code from week 3
 
 ### L2: Artificial Life as a Field
 
-- [ ] POE1
-- [ ] POE2
-- [ ] POE3*
+- [ ] Participated in paper discusisions
+- [ ] Put effort into Perusall comments and questions
+- [ ] IDKIDKIDKIDK
 
 ### L3: Computational Collaboration
 
-- [ ] POE1
-- [ ] POE2
-- [ ] POE3*
+- [ ] Successfully used GitHub to push and pull code for a variety of classes, as documented in my GitHub account
+- [ ] Contributed documentation for Windows users for MABE 2 and created a slideshow to go with it
+- [ ] IDKIDKIDKIDK
 
 ### L4: Failure
 
-- [ ] POE1
-- [ ] POE2
-- [ ] POE3*
+- [ ] Hackathon: attempted code and did not get it to work properly in-class
+- [ ] Worked and studied with peers outside of class and asked for help with code that would not run
+- [ ] C++ code from week 3 was not working but attempted it anyways
 
 ### L5: Reflection and Metacognition
 
-- [ ] POE1
-- [ ] POE2
-- [ ] POE3*
+- [ ] Attended all classes and took notes that were reviewed later down the road
+- [ ] Re-attempted Hackathon code after reviewing with peers and going to office hours
+- [ ] Went to office hours and worked through issues both during and after office hours
