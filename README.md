@@ -43,26 +43,29 @@ _Replace each "POE#" with the actual item you are including_
 
 2 pieces of evidence required for each. 3 pieces required for each if self-assigning an A or A-. 
 
+x = Uploaded
+O = No files attached but completed
+
 ### L1: Evolution as an Algorithm
-- [ ] Hackathon: coding the tournament and roulette selection
-- [ ] Notes from first 5 weeks of class
-- [ ] C++ Code from week 3
+- [X] Hackathon: coding the tournament and roulette selection
+- [X] Notes from first 5 weeks of class
+- [X] C++ Code from week 3 (wrote notes in the WeekNotesFirstFive.pdf and in CMSC500W3D1.pdf)
 
 ### L2: Artificial Life as a Field
 
-- [ ] Participated in paper discusisions
-- [ ] Put effort into Perusall comments and questions
-- [ ] Was able to connect Artificaial Life to my Machine Learning class through various topics like neural networks and modeling data
+- [O] Participated in paper discusisions (Present in class for 3/4 (1 I was awak for a track meet but made comments on Perusall)
+- [O] Put effort into Perusall comments and questions (On Perusall)
+- [X] Was able to connect Artificial Life to my Machine Learning class through various topics like neural networks and modeling data
 
 ### L3: Computational Collaboration
 
-- [ ] Successfully used GitHub to push and pull code for a variety of classes, as documented in my GitHub account
+- [O] Successfully used GitHub to push and pull code for a variety of classes (documented in my GitHub account)
 - [ ] Contributed documentation for Windows users for MABE 2 and created a slideshow to go with it
 - [ ] Went to Office Hours to set up GitHub repository and folders for this self-eval
 
 ### L4: Failure
 
-- [ ] Hackathon: attempted code and did not get it to work properly in-class
+- [ ] Code from week 1 did not work as intended
 - [ ] Worked and studied with peers outside of class and asked for help with code that would not run
 - [ ] C++ code from week 3 was not working but attempted it anyways
 
