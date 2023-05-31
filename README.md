@@ -60,18 +60,18 @@ O = No files attached but completed
 ### L3: Computational Collaboration
 
 - [O] Successfully used GitHub to push and pull code for a variety of classes (documented in my GitHub account)
-- [ ] Contributed documentation for Windows users for MABE 2 and created a slideshow to go with it
-- [ ] Went to Office Hours to set up GitHub repository and folders for this self-eval
+- [X] Contributed documentation for Windows users for MABE 2 and created a slideshow to go with it
+- [O] Went to Office Hours to set up/work through GitHub and learn about how to upload files for this self-eval
 
 ### L4: Failure
 
-- [ ] Code from week 1 did not work as intended
-- [ ] Worked and studied with peers outside of class and asked for help with code that would not run
-- [ ] C++ code from week 3 was not working but attempted it anyways
+- [X] Code from week 1 did not work as intended
+- [O] Worked and studied with peers outside of class and asked for help with code that would not run
+- [X] C++ code from week 3 was not working but attempted to answer the questions anyways and worked with someone who did have it working (Subin)
 
 ### L5: Reflection and Metacognition
 
-- [ ] Attended all classes and took notes that were reviewed later down the road
-- [ ] Re-attempted Hackathon code after reviewing with peers and going to office hours
-- [ ] Went to office hours and worked through issues both during and after office hours
-- [ ] Completed the required self-eval check-in sheets and made sure to act on advice from those meetings (e.g. get hackathon code from someone who had some of it working)
+- [X] Attended all classes and took notes that were reviewed later down the road (in the PDF)
+- [X] Re-attempted Hackathon code after reviewing with peers and going to office hours
+- [O] Went to office hours and worked through issues both during and after office hours
+- [0] Completed the required self-eval check-in sheets and made sure to act on advice from those meetings (e.g. get hackathon code from someone who had some of it working (accidentally recycled these))
