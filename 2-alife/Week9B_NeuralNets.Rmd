@@ -1,0 +1,225 @@
+---
+title: "Week 9 Codes - Neural Networks"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+
+library(tidyverse)
+library(caret)
+library(recipes)
+```
+
+#### ---------------------------------------------------------------------------
+### Artificial Neural Network: iris Dataset
+
+```{r}
+data(iris)
+```
+
+
+```{r}
+summary(iris)
+```
+
+
+```{r}
+set.seed(052523)   # set seed
+
+# split data
+
+index <- createDataPartition(iris$Species, p = 0.8, list = FALSE)
+
+iris_train <- iris[index, ]    # training data
+
+iris_test <- iris[-index, ]    # test data
+```
+
+
+```{r}
+set.seed(052523)   # set seed
+
+# create recipe and blueprint, prepare and apply blueprint
+
+blueprint <- recipe(Species ~ ., data = iris_train) %>%
+  step_normalize(all_predictors())               # center and scale numeric predictors, in this case, all predictors
+
+prepare <- prep(blueprint, training = iris_train)
+
+baked_train <- bake(prepare, new_data = iris_train)
+
+baked_test <- bake(prepare, new_data = iris_test)
+```
+
+
+```{r}
+set.seed(052523)   # set seed
+
+# build network
+
+# install.packages("neuralnet")
+
+library(neuralnet)
+
+nnmodel <-  neuralnet(formula = Species ~ .,
+                      data = baked_train,
+                      hidden = c(4, 2),   # two hidden layers with 4 and 2 nodes respectively
+                      act.fct = "logistic")   # logistic activation function
+```
+
+
+```{r}
+plot(nnmodel)
+```
+
+
+```{r}
+# obtain predictions
+
+preds <- predict(object = nnmodel, newdata = baked_test)   # uses the 'predict.nn' function
+
+classes <- c("setosa", "versicolor", "virginica")
+
+class_preds <- as.factor(classes[apply(preds, 1, which.max)])   
+```
+
+
+```{r}
+# confusion matrix
+
+confusionMatrix(data = class_preds, reference = iris_test$Species)
+```
+
+
+#### ---------------------------------------------------------------------------
+### Artificial Neural Network: MNIST Digits Dataset
+
+```{r}
+# required libraries
+
+library(torch)
+library(luz)           # high-level interface for torch
+library(torchvision)   # for MNIST dataset
+```
+
+
+```{r}
+# the datasets need to be formatted to be used by the functions later
+
+transform <- function(x) {
+  x %>%
+    torch_tensor() %>%
+    torch_flatten() %>%
+    torch_div(255)       # scaling features
+}
+
+
+# training data
+train_ds <- mnist_dataset(
+  root = ".",
+  train = TRUE,
+  download = TRUE,
+  transform = transform
+)
+
+# test data
+test_ds <- mnist_dataset(
+  root = ".",
+  train = FALSE,
+  download = TRUE,
+  transform = transform
+)
+```
+
+
+```{r}
+# build the network
+
+modelnn <- nn_module(
+  
+  initialize = function() {
+    self$linear1 <- nn_linear(in_features = 28*28, out_features = 256)   
+    self$linear2 <- nn_linear(in_features = 256, out_features = 128)   
+    self$linear3 <- nn_linear(in_features = 128, out_features = 10) 
+
+    self$activation <- nn_relu()
+  },
+  
+  forward = function(x) {
+    x %>%
+      
+      self$linear1() %>%
+      self$activation() %>%
+  
+      self$linear2() %>%
+      self$activation() %>%
+      
+      self$linear3() 
+  }
+)
+```
+
+
+```{r}
+print(modelnn())
+```
+
+
+```{r}
+# specify the feedback mechanism
+
+modelnn <- modelnn %>%
+  setup(
+    loss = nn_cross_entropy_loss(),         # specify objective/loss function
+    optimizer = optim_rmsprop,              # specify optimizer
+    metrics = list(luz_metric_accuracy())   # specify metric
+  )
+```
+
+
+```{r}
+set.seed(052523)   # set seed
+
+# fit/train the model
+
+fitted <- modelnn %>%
+    fit(data = train_ds,
+        epochs = 3,
+        valid_data = 0.2,
+        dataloader_options = list(batch_size = 256),
+        verbose = FALSE)
+```
+
+
+```{r}
+plot(fitted)
+```
+
+```{r}
+fitted
+```
+
+
+```{r}
+# obtain predictions on test set
+
+class_preds <- fitted %>%
+  predict(test_ds) %>%
+  torch_argmax(dim = 2) %>% 
+  as_array() 
+```
+
+
+```{r}
+# true classes in test data
+truth <- sapply(seq_along(test_ds), function(x) test_ds[x][[2]])
+
+# convert to factor for confusion matrix
+class_preds <- factor(class_preds)
+truth <- factor(truth)
+
+confusionMatrix(data = class_preds, reference = truth)
+```
+
+#### ---------------------------------------------------------------------------
